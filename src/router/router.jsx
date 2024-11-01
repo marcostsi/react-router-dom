@@ -26,17 +26,13 @@ const router = createBrowserRouter([
         element: <PaginaB/>
       },
       {
-        path: "/params/:userId",
+        path: "/params/:pokemonId",
         element: <Params/>
       },
       {
         path: "/search",
         element: <QueryParams/>
       }
-      //   {
-      //     path: "/desenhos",
-      //     element: <Desenhos />,
-      //   },
     ],
   },
 ]);

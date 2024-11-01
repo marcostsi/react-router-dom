@@ -1,31 +1,27 @@
 import { Link, useParams } from "react-router-dom";
+import PokemonCard from "../../components/pokmon-card";
+
+export const pokemons = [
+  { id: 1, name: "Mewtwo", type: "Psychic", image: "/miu.png" },
+  { id: 2, name: "Lapras", type: "Gelo", image: "/lapras.png" },
+  { id: 3, name: "Charmander", type: "Fogo", image: "/fogo.png" },
+];
 
 export default function Params() {
-  let { userId } = useParams();
+  let { pokemonId } = useParams();
+
+  const foundPokemon = pokemons.find(
+    (pokemon) => pokemon.id === parseInt(pokemonId)
+  );
 
   return (
-    <div className="min-h-screen bg-zinc-800 flex items-center justify-center px-4">
+    <div className="min-h-screen py-20 bg-zinc-800 flex flex-col items-center justify-center px-4">
       <div className="max-w-2xl bg-zinc-900 shadow-md rounded-lg p-6 space-y-6 py-16">
-        <h1 className="text-3xl font-bold text-zinc-200"> Route Parameters</h1>
+        <h1 className="text-3xl font-bold text-zinc-200">Route Parameters</h1>
         <p className="text-zinc-400">
-          Exemplo de <strong>Route Parameters</strong>
-          funcionam no React Router. Um Route Parameter permite que você capture
-          partes dinâmicas da URL, como IDs ou slugs.
-        </p>
-
-        <p className="text-zinc-500">
-          O ID do usuário que você acessou é:{" "}
-          <span className="font-semibold text-zinc-200">{userId}</span>. Isso
-          significa que, ao navegar para uma URL como{" "}
-          <code className="text-zinc-300">/params/{userId}</code>, o valor{" "}
-          <code className="text-zinc-300">{userId}</code> é capturado e se torna
-          disponível no seu componente.
-        </p>
-
-        <p className="text-zinc-400">
-          Com o uso de Route Parameters, você pode construir aplicações mais
-          dinâmicas e interativas, adaptando o conteúdo exibido com base nas
-          informações passadas pela URL.
+          Exemplo de <strong>Route Parameters</strong> funcionam no React
+          Router. Um Route Parameter permite que você capture partes dinâmicas
+          da URL, como IDs ou slugs.
         </p>
 
         <Link
@@ -35,6 +31,16 @@ export default function Params() {
           Voltar para a Página Inicial
         </Link>
       </div>
+
+      {foundPokemon ? (
+        <>
+          <PokemonCard pokemon={foundPokemon} />
+        </>
+      ) : (
+        <p className="text-zinc-400 mt-20">
+          Nenhum Pokémon encontrado com o ID: <strong>{pokemonId}</strong>.
+        </p>
+      )}
     </div>
   );
 }

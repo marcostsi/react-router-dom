@@ -4,7 +4,8 @@
 
 ## Índice
 
-1. [Introdução ao React Router DOM](#introdução-ao-react-router-dom)
+1. [Introdução a rotas](#introdução-a-rotas)
+   - [React Router Dom](#introdução-ao-react-router-dom)
 2. [Componentes Principais](#componentes-principais)
    - [createBrowserRouter e RouterProvider](#createbrowserrouter-e-routerprovider)
 3. [Criando Rotas](#criando-rotas)
@@ -24,9 +25,11 @@
 
 ---
 
-## Introdução ao React Router DOM
+## Introdução a rotas
 
+O React, por si só, não oferece uma solução de roteamento nativa. Para implementar navegação entre diferentes componentes ou páginas, é necessário usar bibliotecas de terceiros. Essas bibliotecas facilitam a criação de uma experiência de navegação, permitindo que os usuários mudem de visualização sem recarregar a página. Algumas das bibliotecas mais populares para roteamento em React são `TanStack Router`, e `React Router Dom`.
 
+### Introdução ao React Router DOM
 
 O **React Router DOM** é uma biblioteca popular para gerenciar rotas em aplicativos React, especialmente desenvolvidos como SPAs (Single Page Applications). Em uma SPA, não há necessidade de carregar uma nova página do servidor cada vez que um link é clicado; o React Router DOM manipula a navegação entre "páginas" ou "componentes de rota" diretamente no navegador, criando uma experiência mais rápida e fluida para o usuário.
 
@@ -43,7 +46,7 @@ No React Router DOM, cada rota é tratada como um **componente**. Ao definir rot
 
 ### Exemplo de Configuração de Rota
 
-Abaixo está um exemplo de como configurar rotas com `createBrowserRouter` e `RouterProvider` para criar uma navegação fluida em uma SPA:
+Abaixo está um exemplo de como configurar rotas com `createBrowserRouter` e `RouterProvider` para criar uma navegação em uma SPA:
 
 ```jsx
 // router.jsx
@@ -213,7 +216,7 @@ const router = createBrowserRouter([
     children: [
       {...}, // Outras rotas
       {
-        path: "/params/:userId",
+        path: "/params/:pokemonId",
         element: <Params />
       },
     ],
@@ -223,18 +226,18 @@ const router = createBrowserRouter([
 export default router;
 ```
 
-No exemplo acima, a URL `http://localhost:5173/params/123` contém um **Route Parameter**. O `:userId` representa um parâmetro dinâmico na rota, onde `123` é o valor específico que pode corresponder a um ID de usuário, um ID de produto, um slug, entre outros.
+No exemplo acima, a URL `http://localhost:5173/params/123` contém um **Route Parameter**. O `:pokemonId` representa um parâmetro dinâmico na rota, onde `123` é o valor específico que pode corresponder a um ID de usuário, um ID de produto, um slug, entre outros.
 
 ### Estrutura de um Route Parameter
 
 A estrutura de um Route Parameter no React Router é definida da seguinte maneira:
 
 - **Prefixo de dois pontos (`:`)**: Indica que o segmento é um parâmetro dinâmico.
-- **Nome do parâmetro**: Este é o nome que você usará para acessar o valor desse parâmetro dentro do componente correspondente. No exemplo, `userId` é o nome do parâmetro.
+- **Nome do parâmetro**: Este é o nome que você usará para acessar o valor desse parâmetro dentro do componente correspondente. No exemplo, `pokemonId` é o nome do parâmetro.
 
 ```js
 {
-  path: "/params/:userId/:productId",
+  path: "/params/:pokemonId/:productId",
   element: <Params />
 },
 ```
@@ -248,11 +251,11 @@ Abaixo está um exemplo simples que demonstra como usar route parameters para ex
 import { useParams } from "react-router-dom";
 
 export default function Params() {
-  const { userId } = useParams();
+  const { pokemonId } = useParams();
 
   return (
     <div className="min-h-screen bg-zinc-800 flex items-center justify-center px-4">
-      <h1>ID do Usuário: {userId}</h1>
+      <h1>ID do Usuário: {pokemonId}</h1>
     </div>
   );
 }

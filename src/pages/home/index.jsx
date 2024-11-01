@@ -23,13 +23,13 @@ export default function Home() {
 
             <div className="flex flex-col w-full gap-4 sm:flex-row sm:justify-center">
               <Link
-                to="/params/123"
+                to="/params/1"
                 className="w-full sm:w-[240px] bg-yellow-400 text-black text-lg py-3 px-4 rounded text-center font-semibold hover:bg-yellow-500 transition-all"
               >
                 Use Params
               </Link>
               <Link
-                to="/search/?q=pokemon"
+                to="/search/?q=lapras"
                 className="w-full sm:w-[240px] bg-black text-white text-lg py-3 px-4 rounded text-center font-semibold hover:bg-gray-800 transition-all"
               >
                 Query
