@@ -4,6 +4,8 @@ import ErrorPage from "../pages/error-page";
 import PaginaA from "../pages/pagina-a";
 import PaginaB from "../pages/pagina-b";
 import Layout from "../layout/layout";
+import Params from "../pages/params";
+import QueryParams from "../pages/query-params";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
       {
         path: "/pagina-b",
         element: <PaginaB/>
+      },
+      {
+        path: "/params/:userId",
+        element: <Params/>
+      },
+      {
+        path: "/search",
+        element: <QueryParams/>
       }
       //   {
       //     path: "/desenhos",

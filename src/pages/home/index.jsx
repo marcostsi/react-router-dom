@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import HeroPage from "../../components/hero";
 import { SectionCssInJS } from "../../components/section.two";
 
@@ -21,18 +22,18 @@ export default function Home() {
             </span>
 
             <div className="flex flex-col w-full gap-4 sm:flex-row sm:justify-center">
-              <a
-                href="/"
+              <Link
+                to="/params/123"
                 className="w-full sm:w-[240px] bg-yellow-400 text-black text-lg py-3 px-4 rounded text-center font-semibold hover:bg-yellow-500 transition-all"
               >
                 Use Params
-              </a>
-              <a
-                href="/"
+              </Link>
+              <Link
+                to="/search/?q=pokemon"
                 className="w-full sm:w-[240px] bg-black text-white text-lg py-3 px-4 rounded text-center font-semibold hover:bg-gray-800 transition-all"
               >
                 Query
-              </a>
+              </Link>
             </div>
           </div>
         </div>
