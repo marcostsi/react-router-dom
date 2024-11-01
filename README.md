@@ -1,4 +1,4 @@
-# Projeto de Rotas com React Router DOM
+# Rotas com React Router DOM
 
 ![Projeto em execução](./public/react-router-dom.png)
 
@@ -21,13 +21,11 @@
    - [Estrutura de um Route Parameter](#exemplo-de-uso-com-route-parameters)
    - [Exemplo de Uso com Route Parameters](#exemplo-de-uso-com-route-parameters)
 6. [Como Executar o Projeto](#como-executar-o-projeto)
-7. [Conclusão](#conclusão)
 
----
 
 ## Introdução a rotas
 
-O React, por si só, não oferece uma solução de roteamento nativa. Para implementar navegação entre diferentes componentes ou páginas, é necessário usar bibliotecas de terceiros. Essas bibliotecas facilitam a criação de uma experiência de navegação, permitindo que os usuários mudem de visualização sem recarregar a página. Algumas das bibliotecas mais populares para roteamento em React são `TanStack Router`, e `React Router Dom`.
+O React, por si só, não oferece uma solução de roteamento nativa. Para implementar navegação entre diferentes páginas, é necessário usar bibliotecas de terceiros. Essas bibliotecas facilitam a criação de uma experiência de navegação, permitindo que os usuários mudem de visualização sem recarregar a página. Algumas das bibliotecas mais populares para roteamento em React são `TanStack Router`, e `React Router Dom`.
 
 ### Introdução ao React Router DOM
 
@@ -255,7 +253,7 @@ export default function Params() {
 
   return (
     <div className="min-h-screen bg-zinc-800 flex items-center justify-center px-4">
-      <h1>ID do Usuário: {pokemonId}</h1>
+      <h1>ID do pokemon: {pokemonId}</h1>
     </div>
   );
 }
@@ -274,10 +272,6 @@ export default function Params() {
    ```
 4. Abra o navegador e acesse `http://localhost:5173` para ver o projeto em execução.
 
-
-## Conclusão
-
-O React Router DOM simplifica a criação e o gerenciamento de rotas em SPAs, oferecendo uma experiência de usuário intuitiva. A utilização dos componentes `Link`, `NavLink`, `createBrowserRouter` e `RouterProvider` permite organizar a navegação e implementar rotas de forma eficiente. Além disso, a flexibilidade para usar query parameters e route parameters torna a navegação em aplicações complexas mais prática e dinâmica.
 
 <a href="https://skillicons.dev">
   <img src="https://skillicons.dev/icons?i=react,js,vite,tailwind" />
