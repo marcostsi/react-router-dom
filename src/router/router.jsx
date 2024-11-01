@@ -6,6 +6,7 @@ import PaginaB from "../pages/pagina-b";
 import Layout from "../layout/layout";
 import Params from "../pages/params";
 import QueryParams from "../pages/query-params";
+import PaginaC from "../pages/pagina-c";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,11 @@ const router = createBrowserRouter([
       {
         path: "/search",
         element: <QueryParams/>
-      }
+      },
+      {
+        path: "/pagina-c",
+        element: <PaginaC/>
+      },
     ],
   },
 ]);
