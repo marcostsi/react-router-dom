@@ -31,6 +31,12 @@ O React, por si só, não oferece uma solução de roteamento nativa. Para imple
 
 O **React Router DOM** é uma biblioteca popular para gerenciar rotas em aplicativos React, especialmente desenvolvidos como SPAs (Single Page Applications). Em uma SPA, não há necessidade de carregar uma nova página do servidor cada vez que um link é clicado; o React Router DOM manipula a navegação entre "páginas" ou "componentes de rota" diretamente no navegador, criando uma experiência mais rápida e fluida para o usuário.
 
+
+```bash
+npm i react-router-dom
+```
+
+
 ## Componentes Principais
 
 ### createBrowserRouter e RouterProvider
